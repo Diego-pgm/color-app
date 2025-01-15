@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Push Image'){
             steps{
-                sh 'docker push diegopgm23/colorapp:latest'
+                sh 'docker push diegopgm23/color-app'
             }
         }
     }
