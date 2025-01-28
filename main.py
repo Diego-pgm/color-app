@@ -1,8 +1,13 @@
 from flask import Flask
 from flask import render_template
-import os
 
-color = os.getenv('APP_COLOR')
+
+with open('./config/web.properties', 'r') as file:
+    props = [prop.strip('\n').split('=') for prop in file.readlines()]
+    properties = {prop[0]: prop[1] for prop in props}
+
+color = properties['APP_COLOR']
+print(color)
 
 app = Flask(__name__)
 
